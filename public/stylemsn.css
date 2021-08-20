@@ -11,9 +11,9 @@ body {
   width: 100%;
   border-radius: 10px;
   background-color: #fff;
-  left: 50%;
-  top: 50%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  left: 100%;
+  top: 70%;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.281);
   background-color: #f8f8f8;
   overflow: hidden;
 }
@@ -21,7 +21,7 @@ body {
 .top_menu {
   background-color: #fff;
   width: 100%;
-  padding: 20px 0 15px;
+  padding: 25px 0 20px;
   box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
 }
 .top_menu .buttons {
@@ -47,7 +47,7 @@ body {
 }
 .top_menu .title {
   text-align: center;
-  color: #bcbdc0;
+  color: #a3d063;
   font-size: 20px;
 }
 

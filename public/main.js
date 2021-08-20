@@ -4,11 +4,11 @@ let submit = document.getElementById('form-product');
 let submitChat = document.getElementById('form-Chat');
 
 //Pedimos la data que hay actualmente enviando un socket
-socket.emit('askProducts');
-socket.emit('askMessages');
+socket.emit('Productos');
+socket.emit('Mensajes');
 
 // Si emite un mensaje individual
-socket.on('messages', (data) => {
+socket.on('mensajes', (data) => {
     console.log('RECIBI MENSAJE');
     alert(data);
 });
@@ -39,7 +39,7 @@ submit.addEventListener('submit', (e) => {
         inputs[form[index].name] = form[index].value;
     }
     console.log(inputs);
-    socket.emit('new-product', inputs);
+    socket.emit('newProducto', inputs);
     submit.reset();
 });
 
@@ -52,7 +52,7 @@ submitChat.addEventListener('submit', (e) => {
     for (let index = 0; index < form.length; index++) {
       inputs[form[index].name] = form[index].value;
     }
-    socket.emit('new-message', inputs);
+    socket.emit('newMensaje', inputs);
     inputTxt.value = '';
 });
 
