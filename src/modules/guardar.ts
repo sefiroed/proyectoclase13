@@ -5,7 +5,7 @@ import moment from 'moment';
 import { guardarMessages } from '../modules/app'
 
 
-export function guardarFromForm(data) {
+export function guardarFromForm(data:any) {
   let flagError = false;
   // const msgErrorParametros = 'Parámetros no validos';
 
@@ -44,7 +44,7 @@ export function guardarFromForm(data) {
 }
 
 //Guardar los mensajes tanto en la variable como en el archivo
-export function guardarNewMessage(data) {
+export function guardarNewMessage(data:any) {
   let now = new Date();
   let date = moment(now).format('DD/MM/YYYY HH:MM:SS');
   const newMsn = new Mensaje(data.email, date, data.text);

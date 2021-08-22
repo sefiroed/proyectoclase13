@@ -8,7 +8,7 @@ const publicPathFileName = path.resolve(
 
 
 //Función para generar un numero aleatorio.
-const random = (min, max) => {
+const random = (min:any, max:any) => {
   return Math.random() * (max - min + 1) + min;
 };
 
@@ -24,14 +24,14 @@ const contenido = () => {
 };
 
 //stringify el contenido para el Item.
-const objToJSON = (contenido) => {
+const objToJSON = (contenido:any) => {
   return JSON.stringify(contenido, undefined, 2);
 };
 
 //Leer y devolver los mensajes en caso de que exista archivo de Mensaje.
 function leerMessages() {
   let filenames = fs.readdirSync(publicPathFolder);
-  const found = filenames.find((element) => 'mensajes.txt' === element);
+  const found = filenames.find((element:string) => 'mensajes.txt' === element);
   if (found === 'mensajes.txt') {
     const data = fs.readFileSync(publicPathFileName, 'utf-8');
     return data;
@@ -41,7 +41,7 @@ function leerMessages() {
 };
 
 // Archivo a guardar con formato JSON
-function guardarMessages(msn) {
+function guardarMessages(msn:any) {
   fs.writeFileSync(publicPathFileName, objToJSON(msn), 'utf-8');
 };
 

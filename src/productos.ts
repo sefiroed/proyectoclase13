@@ -2,38 +2,38 @@
 en la carpeta index.js*/
 
 class Producto {
-  productos;
+  public productos:any;
   constructor() {
     this.productos = [];
   }
   leer() {
     return this.productos;
   }
-  leerPorId(id) {
-    return this.productos.find((producto) => producto.id == id);
+  leerPorId(id:any) {
+    return this.productos.find((producto:any) => producto.id == id);
   }
-  guardar(dato) {
+  guardar(dato:any) {
     const producto = { id: this.productos.length, ...dato };
     this.productos.push(producto);
     return producto;
   }  
-  actualizar(dato, id){
-    if(this.productos.find(data => data.id ==  id) == undefined){
+  actualizar(dato:any, id:any){
+    if(this.productos.find((data:any) => data.id ==  id) == undefined){
       return {"error": "Producto no ha sido encontrado"};
     }    
     else {
-      const indice = this.productos.findIndex(data => data.id ==  id);
+      const indice = this.productos.findIndex((data:any) => data.id ==  id);
       dato['id'] = id
       this.productos[indice] = dato;
       return this.productos
     }
   }
-  borrar(id) {
-    if(this.productos.find(data => data.id ==  id) == undefined){
+  borrar(id:any) {
+    if(this.productos.find((data:any) => data.id ==  id) == undefined){
         return {"error": "Producto no ha sido encontrado"};
     }    
     else {
-        const indice = this.productos.findIndex(data => data.id ==  id);
+        const indice = this.productos.findIndex((data:any) => data.id ==  id);
         this.productos.splice(indice, 1);
         return this.productos
     }

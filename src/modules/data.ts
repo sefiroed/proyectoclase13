@@ -5,10 +5,10 @@ import { leerMessages } from './app';
  */
 
 /* Definiendo mis Array */
-const productos = []; 
-const dbIDs = []; 
-const lastID = { lastID: 0 }; 
-const msn = []; 
+const productos:any = []; 
+const dbIDs:any = []; 
+const lastID:any = { lastID: 0 }; 
+const msn:any = []; 
 
 /* Validar si existen mensajes guardados */
 function checkMessagesOld() {

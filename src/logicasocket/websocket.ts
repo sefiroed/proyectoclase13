@@ -1,15 +1,15 @@
-import socketIo from 'socket.io';
+import { Server } from 'socket.io';
 import { guardarFromForm, guardarNewMessage } from '../modules/guardar';
-import { productos, msn } from '../modules/data.js';
+import { productos, msn } from '../modules/data';
 
 
-export const initWSServer = (server) => {
-    const io = socketIo(server);
+export const initWSServer = (server:any) => {
+    const io = new Server(server);
     
-    io.on('connection', (socket) => {
+    io.on('connection', (socket:any) => {
         console.log('Nueva Conexion establecida!');
 
-        socket.on('newProducto', (data) => {
+        socket.on('newProducto', (data:any) => {
             let res = guardarFromForm(data);
 
             if (res === 400) {
@@ -35,7 +35,7 @@ export const initWSServer = (server) => {
             }
         });
 
-        socket.on('newMensaje', (data) => {
+        socket.on('newMensaje', (data:any) => {
             console.log('Guarda Mensajes');
             guardarNewMessage(data);
             let message = [msn[msn.length - 1]];
